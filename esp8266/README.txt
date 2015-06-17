@@ -18,3 +18,6 @@ http://tylerneylon.com/a/learn-lua/
 ESPlorer IDE
 http://esp8266.ru/esplorer/
 
+Interesting links and Fritzing modules made by other users / Workshop Report
+https://github.com/olab-io/IoT-Workshop-2015?files=1
+
