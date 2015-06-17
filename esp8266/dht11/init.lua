@@ -1,16 +1,18 @@
 wifi.setmode(wifi.STATION)
---wifi.sta.config("FABLAB_TORINO","FablabTorino")
-wifi.sta.config("FASTWEB-1-ddufVHRPqndR","0123456789")
+wifi.sta.config("FABLAB_TORINO","FablabTorino")
+
 --dofile("colorchngled.lua")
 --dofile("led rgb.lua")
+function dothings()
 print("1")
    tmr.alarm(3,20000,1, function() 
    a=(dofile("dht22.lua").read(4))
    print(a)
    end)
 print("2")
-dofile("pushetta.lua")
+--dofile("pushetta.lua")
 print("3")
+end
 
 function connected(conn)
    print("Wifi console connected.")
@@ -29,7 +31,7 @@ function connected(conn)
    print("Welcome to NodeMcu world.")
 end
 function startServer()
-  
+   
    sv=net.createServer(net.TCP, 180)
    sv:listen(2323, connected)
    print("Telnet Server running at :2323")
@@ -42,7 +44,7 @@ tmr.alarm(1, 1000, 1, function()
       print("Wifi AP connected. Wicon IP:")
       print(wifi.sta.getip())
      -- startServer()
-      dofile("Pushetta MQTT.lua")
+      --dofile("Pushetta MQTT.lua")
       tmr.stop(1)
    end
 end)
